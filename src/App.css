@@ -1,0 +1,266 @@
+/* ========== Design tokens ========== */
+:root {
+  --content-w: 900px;
+  /* max readable width for cards/sections */
+  --container-w: 1100px;
+  /* overall container */
+  --gutter: clamp(16px, 4vw, 32px);
+  /* side padding that scales */
+  --space-1: .5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --radius: 12px;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+
+  /* colors (dark) */
+  --bg: #171717;
+  --text: #e8e8e8;
+  --muted: #a3a3a3;
+  --card: #1f1f1f;
+  --border: rgba(255, 255, 255, .12);
+  --accent: #60a5fa;
+}
+
+/* ========== Global ========== */
+html,
+body,
+#root {
+  height: 100%;
+}
+
+.site-title- {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+/* ===== Center whole layout perfectly ===== */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  background: #212020;
+  color: #e5e7eb;
+}
+
+/* Main container — fills width evenly centered */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  /* slightly wider for desktop */
+  padding: 1.5rem clamp(1rem, 5vw, 4rem);
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+main {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Card alignment fix */
+.card {
+  width: 100%;
+  background-color: #1f1f1f;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  box-sizing: border-box;
+}
+
+.card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* Headings and paragraphs scale naturally */
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  text-align: left;
+}
+
+p {
+  text-align: left;
+  max-width: 80ch;
+  /* keeps lines readable */
+}
+
+/* Hero (centers image + text properly) */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.hero p {
+  text-align: left;
+  max-width: 700px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+
+  .container,
+  main {
+    max-width: 95%;
+    padding: 1rem;
+  }
+
+  p {
+    max-width: 100%;
+  }
+}
+
+.luisimg {
+  display: block;
+  margin: var(--space-2) auto var(--space-2);
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ========== Education split (text | logo) ========== */
+.edu {
+  display: grid;
+  grid-template-columns: 1fr 160px;
+  gap: var(--space-3);
+  align-items: center;
+  width: min(100%, var(--content-w));
+  margin-inline: auto;
+}
+
+.edu__logo {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.csufimg {
+  width: 160px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ========== Skills ========== */
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: var(--space-2) var(--space-3);
+  list-style: none;
+  padding: 0;
+  margin: var(--space-2) 0 0;
+  justify-items: center;
+}
+
+.skills-list li {
+  text-align: center;
+  color: var(--muted);
+}
+
+.skills-list svg {
+  display: block;
+  margin: 0 auto .5rem;
+  transition: transform .2s, filter .2s;
+}
+
+.skills-list svg:hover {
+  transform: scale(1.12);
+  filter: drop-shadow(0 0 6px rgba(96, 165, 250, .6));
+}
+
+/* ========== Socials (hero & contact) ========== */
+.socials,
+.contact-me-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: var(--space-2) 0 0;
+}
+
+.socials a,
+.contact-me-info a {
+  color: var(--text);
+  transition: color .2s ease, transform .2s ease;
+}
+
+.socials a:hover,
+.contact-me-info a:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ========== Footer ========== */
+.site-footer {
+  display: flex;
+  justify-content: center;
+  color: var(--muted);
+  padding: var(--space-4) 0;
+  font-size: .9rem;
+}
+
+/* ========== Responsive tweaks ========== */
+@media (max-width: 900px) {
+  .luisimg {
+    width: 150px;
+    height: 150px;
+  }
+
+  .edu {
+    grid-template-columns: 1fr;
+  }
+
+  /* stack edu on mobile */
+  .edu__logo {
+    justify-content: flex-start;
+  }
+
+  .csufimg {
+    width: 140px;
+  }
+}
+
+/* helpful default */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.resume {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: .6rem 1rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #0b1220;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn--sm {
+  padding: .4rem .8rem;
+  font-size: .9rem;
+}
