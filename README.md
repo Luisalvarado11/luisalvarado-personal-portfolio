@@ -1,12 +1,23 @@
-# React + Vite
+# Luis Alvarado — Personal Portfolio 💻
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio website built with **React** and **Vite**, showcasing my technical projects, work experience, and skills in front-end development.
 
-Currently, two official plugins are available:
+**Live Site:** [https://Luisalvarado11.github.io/luisalvarado-personal-portfolio](https://Luisalvarado11.github.io/luisalvarado-personal-portfolio)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This portfolio highlights my background as a Computer Science graduate from California State University, Fullerton.  
+It includes sections for my **education**, **technical skills**, **projects**, and **work experience**.
 
-## Expanding the ESLint configuration
+The goal of this project is to showcase my growth as a developer and provide an easy way for employers to explore my work.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend:** React, HTML5, CSS3, JavaScript (ES6+)
+- **Styling:** Custom CSS, Flexbox, Grid
+- **Build Tool:** Vite
+- **Deployment:** GitHub Pages
+- **Icons:** React Icons
+
+- Responsive design (desktop + mobile)
+- Downloadable resume link
+- Animated hover effects on cards
+- Skills displayed with technology icons
+- Project descriptions with detailed tech stack and achievements
+- Contact section linking to LinkedIn, GitHub, and email
